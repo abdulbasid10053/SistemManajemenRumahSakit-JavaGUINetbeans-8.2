@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_dokter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db75585a-ad39-470a-bbf8-632077dd6159">
+	<property name="ireport.zoom" value="1.0000000000000022"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+     dokter.`id_dokter` AS dokter_id_dokter,
+     dokter.`nama_dokter` AS dokter_nama_dokter,
+     dokter.`bidang_dokter` AS dokter_bidang_dokter,
+     dokter.`ruang_praktik` AS dokter_ruang_praktik,
+     dokter.`jadwal_praktik` AS dokter_jadwal_praktik,
+     dokter.`jam_praktik` AS dokter_jam_praktik
+FROM
+     `dokter` dokter]]>
+	</queryString>
+	<field name="dokter_id_dokter" class="java.lang.String"/>
+	<field name="dokter_nama_dokter" class="java.lang.String"/>
+	<field name="dokter_bidang_dokter" class="java.lang.String"/>
+	<field name="dokter_ruang_praktik" class="java.lang.String"/>
+	<field name="dokter_jadwal_praktik" class="java.lang.String"/>
+	<field name="dokter_jam_praktik" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="10" y="0" width="284" height="46" forecolor="#3333FF" uuid="437b8fc3-130e-4da8-bab6-030763c45382"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Report Data Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="112" y="46" width="182" height="22" forecolor="#00CC00" uuid="52da1223-b8a4-454c-9679-95a2b3464d25"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Rumah Sakit HealtPro]]></text>
+			</staticText>
+			<image>
+				<reportElement x="312" y="8" width="121" height="60" uuid="5c183562-7d94-4203-96a6-64794b4d1b37"/>
+				<imageExpression><![CDATA["C:\\Users\\USER\\Documents\\NetBeansProjects\\JavaAplikasi_v1.0\\src\\javaaplikasi_v1\\pkg0\\icons\\Group 2792.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="40" height="15" forecolor="#0033FF" uuid="a81ca498-e0a0-4bd9-a84d-396332206d5b"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" uuid="deaf0f0b-2788-416a-b827-6032e48a5d50"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#0033FF"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="40" y="19" width="100" height="15" forecolor="#0033FF" uuid="40f6aa2e-7fab-4b28-8654-bee1def84f11"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="140" y="19" width="139" height="15" forecolor="#0033FF" uuid="3ca35336-45e3-43ef-8357-51e62d6ff05a"/>
+				<text><![CDATA[BIDANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="479" y="19" width="65" height="15" forecolor="#0033FF" uuid="b6b42718-6a9e-4df3-968c-8d5182d44a0a"/>
+				<text><![CDATA[JAM]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="279" y="19" width="79" height="15" forecolor="#0033FF" uuid="3fb2821b-7191-4513-aa2a-3e77062108cd"/>
+				<text><![CDATA[RUANG]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="379" y="19" width="70" height="15" forecolor="#0033FF" uuid="f67d2cc9-7612-4b60-a94b-2b8fc505585b"/>
+				<text><![CDATA[HARI]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="e58f71be-b084-483e-bab4-2153773742f0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#0033CC"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="40" height="20" uuid="9432d5fd-91b0-4b46-b46b-2adf60c841eb"/>
+				<textFieldExpression><![CDATA[$F{dokter_id_dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="139" height="20" uuid="acd4b795-133a-44ff-9c18-7728554ab243"/>
+				<textFieldExpression><![CDATA[$F{dokter_bidang_dokter}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="279" y="0" width="79" height="20" uuid="d5ffacd3-36af-47d0-8a9b-1f691611bc5f"/>
+				<textFieldExpression><![CDATA[$F{dokter_ruang_praktik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="0" width="70" height="20" uuid="d093fc75-a4c4-4d0a-be96-fbbde212e2b1"/>
+				<textFieldExpression><![CDATA[$F{dokter_jadwal_praktik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="0" width="65" height="20" uuid="b5b551c6-27ae-44df-bd3b-6e6ebf119437"/>
+				<textFieldExpression><![CDATA[$F{dokter_jam_praktik}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" uuid="d1fd0855-95b9-4950-91e2-c4e4f110434d"/>
+				<textFieldExpression><![CDATA[$F{dokter_nama_dokter}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="fa1c40c7-db18-4a4d-86cf-3c897f787834"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#0033FF"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="433" y="0" width="80" height="20" uuid="51ad4360-eb57-4c87-a1a7-0ba3f8e8a839"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="513" y="0" width="40" height="20" uuid="d4c13aff-a19c-4dd2-9390-af4b9e58df7b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="52c2933a-095a-4862-a976-bc9903938220"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

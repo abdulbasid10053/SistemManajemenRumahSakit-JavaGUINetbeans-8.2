@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report_dokter" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="db75585a-ad39-470a-bbf8-632077dd6159">
+	<property name="ireport.zoom" value="1.1000000000000045"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString>
+		<![CDATA[SELECT
+     pasien.`id` AS pasien_id,
+     pasien.`id_pasien` AS pasien_id_pasien,
+     pasien.`nama_pasien` AS pasien_nama_pasien,
+     pasien.`ruangan` AS pasien_ruangan,
+     pasien.`jenis_kelamin` AS pasien_jenis_kelamin,
+     pasien.`usia` AS pasien_usia,
+     pasien.`tanggal_masuk` AS pasien_tanggal_masuk,
+     pasien.`keluhan` AS pasien_keluhan
+FROM
+     `pasien` pasien]]>
+	</queryString>
+	<field name="pasien_id" class="java.lang.Integer"/>
+	<field name="pasien_id_pasien" class="java.lang.String"/>
+	<field name="pasien_nama_pasien" class="java.lang.String"/>
+	<field name="pasien_ruangan" class="java.lang.String"/>
+	<field name="pasien_jenis_kelamin" class="java.lang.String"/>
+	<field name="pasien_usia" class="java.lang.Integer"/>
+	<field name="pasien_tanggal_masuk" class="java.lang.String"/>
+	<field name="pasien_keluhan" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="71" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="25" y="0" width="284" height="46" forecolor="#3333FF" uuid="7f2b56bf-1082-4b90-b6ce-28146164b469"/>
+				<textElement verticalAlignment="Middle">
+					<font size="30"/>
+				</textElement>
+				<text><![CDATA[Report Data Pasien]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="109" y="46" width="200" height="22" forecolor="#00CC00" uuid="1d312030-f330-40f0-9dd6-6942fd0a1156"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Rumah Sakit HealtPro]]></text>
+			</staticText>
+			<image>
+				<reportElement x="333" y="8" width="121" height="60" uuid="e457fe1c-0668-44d0-9131-946a4bae1955"/>
+				<imageExpression><![CDATA["C:\\Users\\USER\\Documents\\NetBeansProjects\\JavaAplikasi_v1.0\\src\\javaaplikasi_v1\\pkg0\\icons\\Group 2792.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="20" width="40" height="15" forecolor="#0000FF" uuid="a81ca498-e0a0-4bd9-a84d-396332206d5b"/>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="35" width="555" height="1" forecolor="#0000CC" uuid="deaf0f0b-2788-416a-b827-6032e48a5d50"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#0033FF"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="40" y="19" width="100" height="15" forecolor="#0000FF" uuid="40f6aa2e-7fab-4b28-8654-bee1def84f11"/>
+				<text><![CDATA[NAMA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="140" y="19" width="92" height="15" forecolor="#0000FF" uuid="3ca35336-45e3-43ef-8357-51e62d6ff05a"/>
+				<text><![CDATA[RUANGAN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="389" y="20" width="65" height="15" forecolor="#0000FF" uuid="b6b42718-6a9e-4df3-968c-8d5182d44a0a"/>
+				<text><![CDATA[TANGGAL MASUK]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="232" y="19" width="112" height="15" forecolor="#0000FF" uuid="3fb2821b-7191-4513-aa2a-3e77062108cd"/>
+				<text><![CDATA[JENIS KELAMIN]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="344" y="19" width="45" height="15" forecolor="#0000FF" uuid="f67d2cc9-7612-4b60-a94b-2b8fc505585b"/>
+				<text><![CDATA[USIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="464" y="21" width="89" height="15" forecolor="#0000FF" uuid="278e6fbc-a053-4576-914b-5433d6e37e5a"/>
+				<text><![CDATA[KELUHAN]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" forecolor="#0000FF" uuid="e58f71be-b084-483e-bab4-2153773742f0"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#3333FF"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="0" width="40" height="20" uuid="9432d5fd-91b0-4b46-b46b-2adf60c841eb"/>
+				<textFieldExpression><![CDATA[$F{pasien_id_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="0" width="92" height="20" uuid="acd4b795-133a-44ff-9c18-7728554ab243"/>
+				<textFieldExpression><![CDATA[$F{pasien_ruangan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="0" width="112" height="20" uuid="d5ffacd3-36af-47d0-8a9b-1f691611bc5f"/>
+				<textFieldExpression><![CDATA[$F{pasien_jenis_kelamin}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="344" y="0" width="45" height="20" uuid="d093fc75-a4c4-4d0a-be96-fbbde212e2b1"/>
+				<textFieldExpression><![CDATA[$F{pasien_usia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="389" y="0" width="65" height="20" uuid="b5b551c6-27ae-44df-bd3b-6e6ebf119437"/>
+				<textFieldExpression><![CDATA[$F{pasien_tanggal_masuk}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="0" width="100" height="20" uuid="d1fd0855-95b9-4950-91e2-c4e4f110434d"/>
+				<textFieldExpression><![CDATA[$F{pasien_nama_pasien}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="464" y="0" width="91" height="20" uuid="c76a2540-8832-4127-bf6f-2896ebfa4210"/>
+				<textFieldExpression><![CDATA[$F{pasien_keluhan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="10" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="3" forecolor="#0000CC" backcolor="#0033CC" uuid="fa1c40c7-db18-4a4d-86cf-3c897f787834"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#0000CC"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="21" splitType="Stretch">
+			<textField>
+				<reportElement style="Column header" x="488" y="1" width="53" height="20" uuid="51ad4360-eb57-4c87-a1a7-0ba3f8e8a839"/>
+				<textElement textAlignment="Right">
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement style="Column header" x="541" y="1" width="25" height="20" uuid="d4c13aff-a19c-4dd2-9390-af4b9e58df7b"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="0" y="0" width="197" height="20" uuid="52c2933a-095a-4862-a976-bc9903938220"/>
+				<textElement>
+					<font size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
